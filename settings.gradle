@@ -1,0 +1,2 @@
+rootProject.name='MonHun Apps'
+include ':app'
