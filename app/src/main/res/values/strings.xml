@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MonHun Apps</string>
+    <string name="mh4u">Monster Hunter 4 Ultimate</string>
+    <string name="mhw">Monster Hunter World</string>
+    <string name="mhwib">Monster Hunter World Iceborne</string>
+    <string name="mhgen">Monster Hunter Generation</string>
+    <string name="mhgenu">Monster Hunter Generation Ultimate</string>
 </resources>
