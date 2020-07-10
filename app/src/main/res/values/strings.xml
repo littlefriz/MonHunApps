@@ -5,4 +5,6 @@
     <string name="mhwib">Monster Hunter World Iceborne</string>
     <string name="mhgen">Monster Hunter Generation</string>
     <string name="mhgenu">Monster Hunter Generation Ultimate</string>
+    <string name="home">Home</string>
+    <string name="add_armor">Add Armor</string>
 </resources>
