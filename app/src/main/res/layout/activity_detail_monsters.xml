@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailMonsters">
+
+    <ImageView
+    android:layout_width="400dp"
+    android:layout_height="200dp"
+    android:layout_margin="10dp"
+    android:id="@+id/detail_pic"
+    android:layout_centerHorizontal="true" />
+
+    <TextView
+    android:id="@+id/tv_monster_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/detail_pic"
+    android:textSize="40dp"/>
+
+    <TableLayout
+        android:id="@+id/monsterStat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_monster_name">
+        <TableRow
+            android:background="@color/colorLightBlue">
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:layout_margin="15dp"
+                android:textSize="20dp"
+                android:text="Kriteria Monster"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:layout_margin="15dp"
+                android:textSize="20dp"
+                android:text="@string/tv_element"
+                />
+            <ImageView
+                android:id="@+id/img_element"
+                android:layout_margin="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:layout_margin="15dp"
+                android:textSize="20dp"
+                android:text="Weakness"
+                />
+            <ImageView
+                android:id="@+id/weakness1"
+                android:layout_margin="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ice"/>
+            <ImageView
+                android:id="@+id/weakness2"
+                android:layout_margin="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/water"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:layout_margin="15dp"
+                android:textSize="20dp"
+                android:text=""
+                />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

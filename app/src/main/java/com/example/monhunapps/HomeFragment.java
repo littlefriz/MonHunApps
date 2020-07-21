@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,5 +34,16 @@ public class HomeFragment extends Fragment {
         rvMonster.setLayoutManager(new LinearLayoutManager(getActivity()));
         ListMonsterAdapter listMonsterAdapter = new ListMonsterAdapter(list);
         rvMonster.setAdapter(listMonsterAdapter);
+
+        listMonsterAdapter.setOnItemClickCallback(new ListMonsterAdapter.OnItemClickCallback(){
+            @Override
+            public void onItemClicked(Monster data){
+                showSelectedMonster(data);
+            }
+        });
+    }
+
+    private void showSelectedMonster(Monster monster){
+        Toast.makeText(getActivity(),"Kamu memilih "+monster.getName(), Toast.LENGTH_LONG).show();
     }
 }

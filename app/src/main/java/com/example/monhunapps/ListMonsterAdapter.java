@@ -17,6 +17,11 @@ import java.util.ArrayList;
 
 public class ListMonsterAdapter extends RecyclerView.Adapter<ListMonsterAdapter.ListViewHolder> {
     private ArrayList<Monster> listMonster;
+    private OnItemClickCallback onItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback;
+    }
 
     public ListMonsterAdapter(ArrayList<Monster>list){
         this.listMonster = list;
@@ -29,13 +34,20 @@ public class ListMonsterAdapter extends RecyclerView.Adapter<ListMonsterAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         Monster monster = listMonster.get(position);
         Glide.with(holder.itemView.getContext())
                 .load(monster.getPhoto())
                 .apply(new RequestOptions().override(60,60))
                 .into(holder.imgPhoto);
         holder.tvName.setText(monster.getName());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(listMonster.get(holder.getAdapterPosition()));
+            }
+        });
     }
 
     @Override
@@ -51,5 +63,9 @@ public class ListMonsterAdapter extends RecyclerView.Adapter<ListMonsterAdapter.
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.tv_monster_name);
         }
+    }
+
+    public interface OnItemClickCallback{
+        void onItemClicked(Monster data);
     }
 }
